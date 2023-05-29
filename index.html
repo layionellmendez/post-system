@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thread System</title>
+</head>
+<body>
+<h1>Thread System</h1>
+<div id="threads"></div>
+<div id="post-input">
+<input type="text" id="post-title">
+<input type="text" id="post-body">
+<button id="post-button">Post</button>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(function() {
+  // Get the threads from the server.
+  $.ajax({
+    url: "thread.json",
+    type: "GET",
+    success: function(data) {
+      // Loop through the threads and create a new <div> element for each one.
+      $.each(data, function(index, thread) {
+        var div = $("<div>");
+        div.attr("id", "thread-" + thread.id);
+        div.text(thread.title);
+        $("#threads").append(div);
+      });
+    }
+  });
+
+  // Handle the post button click.
+  $("#post-button").on("click", function() {
+    // Get the post title and body.
+    var title = $("#post-title").val();
+    var body = $("#post-body").val();
+
+    // Post the message to the server.
+    $.ajax({
+      url: "post.json",
+      type: "GET",
+      data: {
+        title: title,
+        body: body
+      },
+      success: function(data) {
+        // Add the new post to the list of threads.
+        var div = $("<div>");
+        div.attr("id", "thread-" + data.id);
+        div.text(data.title);
+        $("#threads").append(div);
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>
