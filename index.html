@@ -16,7 +16,7 @@
 $(function() {
   // Get the threads from the server.
   $.ajax({
-    url: "thread.json",
+    url: "https://layionellmendez.github.io/post-system/thread.json",
     type: "GET",
     success: function(data) {
       // Loop through the threads and create a new <div> element for each one.
@@ -37,7 +37,7 @@ $(function() {
 
     // Post the message to the server.
     $.ajax({
-      url: "post.json",
+      url: "https://layionellmendez.github.io/post-system/post.json",
       type: "POST",
       data: {
         title: title,
