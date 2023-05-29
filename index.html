@@ -1,58 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Thread System</title>
+<title>Post System</title>
 </head>
 <body>
-<h1>Thread System</h1>
+<h1>Post System</h1>
 <div id="threads"></div>
 <div id="post-input">
 <input type="text" id="post-title">
 <input type="text" id="post-body">
 <button id="post-button">Post</button>
 </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-$(function() {
-  // Get the threads from the server.
-  $.ajax({
-    url: "https://layionellmendez.github.io/post-system/thread.json",
-    type: "GET",
-    success: function(data) {
-      // Loop through the threads and create a new <div> element for each one.
-      $.each(data, function(index, thread) {
-        var div = $("<div>");
-        div.attr("id", "thread-" + thread.id);
-        div.text(thread.title);
-        $("#threads").append(div);
-      });
-    }
-  });
+// Get the threads from the server.
+var threads = fetch("https://raw.githubusercontent.com/layionellmendez/post-system/main/data.json").then(response => response.json());
 
-  // Handle the post button click.
-  $("#post-button").on("click", function() {
-    // Get the post title and body.
-    var title = $("#post-title").val();
-    var body = $("#post-body").val();
-
-    // Post the message to the server.
-    $.ajax({
-      url: "https://layionellmendez.github.io/post-system/post.json",
-      type: "POST",
-      data: {
-        title: title,
-        body: body
-      },
-      success: function(data) {
-        // Add the new post to the list of threads.
-        var div = $("<div>");
-        div.attr("id", "thread-" + data.id);
-        div.text(data.title);
-        $("#threads").append(div);
-      }
-    });
-  });
+// Loop through the threads and create a new <div> element for each one.
+threads.forEach(thread => {
+  var div = document.createElement("div");
+  div.id = "thread-" + thread.id;
+  div.textContent = thread.title;
+  document.getElementById("threads").appendChild(div);
 });
+
+// Handle the post button click.
+document.getElementById("post-button").addEventListener("click", function() {
+  // Get the post title and body.
+  var title = document.getElementById("post-title").value;
+  var body = document.getElementById("post-body").value;
+
+  // Post the message to the server.
+  fetch("https://raw.githubusercontent.com/layionellmendez/post-system/main/post.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      title: title,
+      body: body,
+    }),
+  }).then(response => response.json());
+});
+
 </script>
 </body>
 </html>
