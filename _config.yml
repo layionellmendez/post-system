@@ -1,4 +1,4 @@
 name: Music Forum
 markdown: kramdown
 pygments: true
-baseurl: /testsiete
+baseurl: /post-system
