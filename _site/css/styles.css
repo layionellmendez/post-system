@@ -1,0 +1,22 @@
+.light-opacity {
+opacity: .3;
+filter: alpha(opacity=30);
+}
+
+.tr-bg {
+background-color: #F9F9F9;
+}
+
+.forum-post-panel-sub {
+float: left;
+width: 130px;
+margin-right: 25px;
+}
+
+.user-section p a.nickname {text-align: center;font-size: 14px;}
+.user-section p {font-size: 12px; margin-bottom: 2px; font-weight: bold;} 
+.user-section p span {font-weight: normal;}
+
+.comment {overflow: hidden;}
+
+.panel-body p {text-align: center;}

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.3.2">Jekyll</generator><link href="http://localhost:4000/testsiete/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/testsiete/" rel="alternate" type="text/html" /><updated>2023-05-23T00:37:02-06:00</updated><id>http://localhost:4000/testsiete/feed.xml</id><title type="html">Music Forum</title><entry><title type="html">Burial at Watergate</title><link href="http://localhost:4000/testsiete/2013/11/06/burial-at-watergate.html" rel="alternate" type="text/html" title="Burial at Watergate" /><published>2013-11-06T08:05:51-06:00</published><updated>2013-11-06T08:05:51-06:00</updated><id>http://localhost:4000/testsiete/2013/11/06/burial-at-watergate</id><content type="html" xml:base="http://localhost:4000/testsiete/2013/11/06/burial-at-watergate.html"><![CDATA[<div class="forum-post-wrapper clearfix">
+	<div class="comment">
+		<div class="forum-post-panel-sub well">
+			<div class="user-section">
+				<img class="thumbnail" src="/testsiete/images/avatar.jpg" />
+				<p><a href="#" class="nickname" title="View user profile.">Sirena</a></p>
+				<p>Posts: <span>51</span></p>
+				<p>Joined: <span>12.03.2011</span></p>
+			</div>
+		</div>
+
+		<p>Burial + John Talabot<br />Date: Friday 27 September<br />Venue: Watergate (Berlin) <br />Ticket price: Unknown</p>
+		<p>Who's coming with me??</p>
+   </div>
+<div class="comment">
+	<div class="forum-post-panel-sub well">
+		<div class="user-section">
+			<img class="thumbnail" src="/testsiete/images/avatar.jpg" />
+			<p><a href="#" class="nickname" title="View user profile.">2800</a></p>
+			<p>Posts: <span>120</span></p>
+			<p>Joined: <span>17.06.2009</span></p>
+		</div>
+	</div>
+
+	<p>OMFG!! That sounds AWESOME!!! I need to check first my calendar. Some friends are coming to Berlin to visit me, but I don't know when for sure. But if I am available that night I will let you know fo' sho'.</p>
+	<p>If I go with you, that night can be EPIC.</p>
+  </div>
+
+</div>]]></content><author><name></name></author><summary type="html"><![CDATA[Sirena Posts: 51 Joined: 12.03.2011]]></summary></entry></feed>

@@ -1,0 +1,51 @@
+---
+layout: default
+---
+<ol class="breadcrumb">
+  <li><a href="{{ site.baseurl}}/">Home</a></li>
+  <li class="active">Future events</li>
+</ol>
+
+<div id="forum">
+
+	<table id="forum-0" class="table table-bordered">
+		<thead>
+			<tr>
+				<th class="span1"><span class="glyphicon glyphicon-folder-open"></span></th>
+				<th>Forum</th>
+				<th class="span2"><span class="glyphicon glyphicon-comment"></span> Replies</th>
+				<th class="span2"><span class="glyphicon glyphicon-eye-open"></span> Views</th>
+				<th class="span2"><span class="glyphicon glyphicon-bullhorn"></span> Created</th>
+				<th class="span3"><span class="glyphicon glyphicon-time"></span> Last reply</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			{% for post in site.posts %}
+			<tr>
+				<td class="forum-icons"><span class="glyphicon glyphicon-file light-opacity"></span></td>
+				<td class="forum-topic">
+					<h4><a href="{{ site.baseurl}}{{ post.url }}">{{ post.title }}</a></h4>
+				</td>
+				<td class="forum-topic-count text-center">{{ post.replies }}</td>
+				<td class="forum-post-count text-center">{{ post.views }}</td>
+				<td class="forum-last-reply">
+					by <a href="#" title="View user profile.">{{ post.user_new }}</a><br>{{ post.date_new }}
+				</td>
+				<td class="forum-last-reply">
+					by <a href="#" title="View user profile.">{{ post.user_last }}</a><br>{{ post.date_last }}
+				</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+	
+	<ul class="pagination">
+	  <li><a href="#">&laquo;</a></li>
+	  <li><a href="#">1</a></li>
+	  <li><a href="#">2</a></li>
+	  <li><a href="#">3</a></li>
+	  <li><a href="#">&raquo;</a></li>
+	</ul>
+	
+</div>
